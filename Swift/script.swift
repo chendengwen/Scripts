@@ -12,7 +12,7 @@ class Execution{
         let task = Process();
         task.launchPath = path
         if arguments != nil {
-            task.arguments = task.arguments!
+            task.arguments = arguments!
         }
         task.launch()
         task.waitUntilExit()
@@ -24,3 +24,6 @@ var status :Int = 0
 
 status = Execution.execute(path: "/bin/ls")
 print("Status = \(status)")
+
+//status = Execution.execute(path: "/bin/ls",arguments:["/"])
+//print("Status = \(status)")

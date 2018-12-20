@@ -6,7 +6,7 @@ class Execution{
         let task = Process();
         task.launchPath = path
         if arguments != nil {
-            task.arguments = task.arguments!
+            task.arguments = arguments!
         }
         task.launch()
         task.waitUntilExit()
