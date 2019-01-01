@@ -6,7 +6,7 @@ import os
 from scapy.all import sniff,wrpcap,Raw,IP,TCP
 
 # 标准格式：sniff(filter="",iface="any",prn=function,count=N)
-# filter 对scapy嗅探的数据包 指定一个 BPF（wireshark类型）的过滤器，留空嗅探所有数据包
+# filter 对scapy嗅探的数据包 指定一个 BPF（wireshark类型）的过滤器，留空表示嗅探所有数据包
 # iface  设置所需要嗅探的网卡，留空嗅探所有网卡
 # prn    指定嗅探到符合过滤器条件的数据包时所调用的回调函数,这个回调函数以接受到的数据包对象作为唯一的参数。
 # count  指定嗅探的数据包的个数，留空则默认为嗅探无限个
@@ -18,7 +18,10 @@ def get_pcap(ifs,ip=None,size=100):
     filter = ""
     if ip:
         filter += "ip src %s and tcp and tcp port 80"%ip
-        dpkt = sniff(iface=ifs,filter=filter,count=size)
+        #加了过滤以后程序堵塞，不输出                             #lambda x:x.summary()
+#        dpkt = sniff(iface=ifs,filter=filter,count=size,prn=lambda x:x.sprintf("8888888888"))
+
+        dpkt = sniff(iface=ifs,count=size)
     else:
         dpkt = sniff(iface=ifs,count=size)
     # wrpcap("pc1.pcap",dpkt) # 保存数据包到文件
@@ -53,7 +56,7 @@ def get_ip_pcap(ifs,sender,size=100):
 
 
 def main():
-    ifs = 'eth0' # eth0 eth0:1 和eth0.1三者的关系对应于物理网卡、子网卡、虚拟VLAN网卡
+    ifs = 'en0' # eth0 eth0:1 和eth0.1三者的关系对应于物理网卡、子网卡、虚拟VLAN网卡
     ip = "www.baidu.com"  # ip地址，也可写域名，如：www.baidu.com
     get_ip_pcap(ifs,ip,size=1)  # 一次接收一个包
 
