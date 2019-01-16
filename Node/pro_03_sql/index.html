@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>sql动态网页</title>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+
+	<style type="text/css">
+        .container{
+                position:relative;
+        }
+        .search{
+                position:absolute;
+                width:50px;
+                height:20px;
+                top:4px;
+                left:100px;
+                z-index:99;
+        }
+	</style>
+</head>
+<body>
+
+	<div class="container">
+        <input type="text" value="111" id="sousuo"  /> 
+        <button class="search" id="find" type="button" onclick="buttonClick()">搜索</button>
+	</div>
+
+	<div id="infoBox">
+		
+	</div>
+
+
+	<script type="text/javascript">
+		function buttonClick (argument) {
+		    
+	    	$("#find").css("background-color","#D6D6FF");
+	        var sInfo = {
+	            name: $("#sousuo").val()
+	        };
+
+	        $.ajax({
+	            type: "get",            //使用的方式，get 还是 post
+	            dataType: "text",       //使用的数据格式
+	            url: "./search",         //发送的地址
+	            data: sInfo,            //需要发送的数据，用json格式来传
+	            success: function(msg){  //得到回复以后的回调函数
+	                //===将字符串转化为 Object jSon
+	                msg = JSON.parse(msg);
+	                $('#infoBox').slideDown(300);
+	                if(msg == ''){
+	                    $("#infoBox").html('');
+	                    var str = '没有匹配的数据';
+	                    $("#infoBox").append("<p>"+str+"</p>");
+	                }
+	                else{
+	                    $("#infoBox").html('');
+	                    var len = msg.length;
+	                    for(var i = 0; i < len; i++){
+	                        $("#infoBox").append("<p>"+msg[i].name+"</p>");
+	                    }
+	                }
+	            }
+	        });
+	    }
+	</script>
+	
+</body>
+</html>
