@@ -39,7 +39,7 @@ app.use(session({
 	saveUninitialized: false,
 	cookie: config.session.cookie,
 	store: new MongoStore({
-  	url: config.url
+  		url: config.url
 	})
 }))
 
@@ -69,8 +69,8 @@ router(app);
 //     ]
 // }));
 
-//设置网站访问路径
 app.use(history());
+//设置网站访问路径
 app.use(express.static('./public'));
 app.listen(config.port, () => {
 	console.log(
