@@ -45,24 +45,24 @@ class Admin extends AddressComponent {
 			try{
 				const admin = await AdminModel.findOne({user_name})
 				if (!admin) {
-					const adminTip = status == 1 ? '管理员' : '超级管理员'
+					const adminTip = status == 1 ? '管理员' : '超级管理员';
 					const admin_id = await this.getId('admin_id');
 					const cityInfo = await this.guessPosition(req);
 					const newAdmin = {
 						user_name, 
-						password: newpassword, 
+						password: newpassword,
 						id: admin_id,
 						create_time: dtime().format('YYYY-MM-DD HH:mm'),
 						admin: adminTip,
 						status,
 						city: cityInfo.city
 					}
-					await AdminModel.create(newAdmin)
+					await AdminModel.create(newAdmin);
 					req.session.admin_id = admin_id;
 					res.send({
 						status: 1,
 						success: '注册管理员成功',
-					})
+					});
 				}else if(newpassword.toString() != admin.password.toString()){
 					console.log('管理员登录密码错误');
 					res.send({
@@ -75,7 +75,7 @@ class Admin extends AddressComponent {
 					res.send({
 						status: 1,
 						success: '登录成功'
-					})
+					});
 				}
 			}catch(err){
 				console.log('登录管理员失败', err);
@@ -83,9 +83,9 @@ class Admin extends AddressComponent {
 					status: 0,
 					type: 'LOGIN_ADMIN_FAILED',
 					message: '登录管理员失败',
-				})
+				});
 			}
-		})
+		});
 	}
 	async register(req, res, next){
 		const form = new formidable.IncomingForm();

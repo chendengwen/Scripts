@@ -30,6 +30,8 @@ app.all('*', (req, res, next) => {
 });
 
 // app.use(Statistic.apiRecord)
+
+//负载均衡配置 Session，把 Session 保存到数据库里面（session入库）
 const MongoStore = connectMongo(session);
 app.use(cookieParser());
 app.use(session({
@@ -72,6 +74,9 @@ router(app);
 app.use(history());
 //设置网站访问路径
 app.use(express.static('./public'));
+//这样可以通过带有 /static 前缀地址来访问 public 目录中的文件了。
+//app.use('/static', express.static('public'))
+
 app.listen(config.port, () => {
 	console.log(
 		chalk.green(`成功监听端口：${config.port}`)
