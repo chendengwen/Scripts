@@ -17,6 +17,7 @@ function openCon(){
 /**********************查询数据**********************************/
 exports.searchDb = function(sInfo, res){
     var sql = 'select name from users where name like ?';
+    // var sql = 'SELECT * FROM users WHERE id = ?';
     openCon().query(sql, ['%'+sInfo+'%'], function(error, results){
         if(error){
             console.log(error);
