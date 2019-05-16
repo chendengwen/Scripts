@@ -19,6 +19,8 @@ var server = http.createServer(function(req, res){
     }
 });
 
-server.listen(8090);
+server.listen(8099);
 
-console.log("server running at http://127.0.0.1:8090");
+console.log("server running at http://127.0.0.1:8099");
+
+//调用示例：http://127.0.0.1:8099/login

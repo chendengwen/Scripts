@@ -2,6 +2,8 @@
 	<div class="manage_page fillcontain">
 		<el-row style="height: 100%;">
 	  		<el-col :span="4"  style="min-height: 100%; background-color: #324057;">
+	  			<!-- 1.要实现路由跳转，先要在el-menu标签上添加router属性，然后只要在每个el-menu-item标签内的index属性设置一下url即可实现点击el-menu-item实现路由跳转。 -->
+	  			<!-- 2.导航当前项，在el-menu标签中绑定  :default-active="$route.path",注意是绑定属性，不要忘了加“:”,当$route.path等于el-menu-item标签中的index属性值时则该item为当前项。 -->
 				<el-menu :default-active="defaultActive" style="min-height: 100%;" theme="dark" router>
 					<el-menu-item index="manage"><i class="el-icon-menu"></i>首页</el-menu-item>
 					<el-submenu index="2">

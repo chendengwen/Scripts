@@ -36,7 +36,7 @@ module.exports = {
         })
     },
     register:function(req, res){
-        fs.readFile('.register.html', function(err, data){
+        fs.readFile('./register.html', function(err, data){
             if(err) {
                 console.log(err);
                 res.writeHead(200, {'Content-Type': 'text/html;charset=utf-8'})

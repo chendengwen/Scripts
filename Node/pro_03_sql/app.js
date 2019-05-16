@@ -5,7 +5,7 @@ var url = require('url');
 var control = require('./modules/controller.js');
 var fs = require('fs');
 
-var server = http.createServer(function (request, response) {
+var server = http.createServer(function (request , response) {
 	console.log('url == ' + request.url) ;
 	var pathname = url.parse(request.url).pathname;
 	if (pathname == '/search') {
@@ -31,6 +31,6 @@ var server = http.createServer(function (request, response) {
 	}
 });
 
-server.listen(8090);
+server.listen(8099);
 
-console.log('Server is running at http://127.0.0.1:8090/');
+console.log('Server is running at http://127.0.0.1:8099/');

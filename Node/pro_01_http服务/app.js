@@ -7,4 +7,4 @@ greet('gary');
 */
 
 // var httpServer = require('./modules/server/httpServer.js');
-// var fileServer = require('./modules/server/fileServer.js');
+var fileServer = require('./modules/server/fileServer.js');

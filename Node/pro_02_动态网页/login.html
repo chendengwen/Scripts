@@ -6,7 +6,8 @@
 </head>
 <body>
     <img src="./showImage" alt="">
-    <h1>收到参数：username：{{username}}</h1>
+    <!-- {{username}}会在router.js中被正则替换 -->
+    <h1>收到参数：username：{{username}}</h1> 
     <h1>收到参数：password：{{password}}</h1>
     <form action="./login" method="POST">
         <p>
