@@ -13,6 +13,8 @@ import chalk from 'chalk';
 // import Statistic from './middlewares/statistic'
 
 const app = express();
+// app.use 来注册函数
+// app.set 设置express内部的一些参数（options）
 
 app.all('*', (req, res, next) => {
 	const { origin, Origin, referer, Referer } = req.headers;
