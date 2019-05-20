@@ -4,6 +4,7 @@ import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema;
 
+//定义模板Schema
 const userInfoSchema = new Schema({
 	avatar: {type: String, default: 'default.jpg'},
 	balance: {type: Number, default: 0},
@@ -32,9 +33,36 @@ const userInfoSchema = new Schema({
 	},
 })
 
+/* 
+//给模板定义函数
+userInfoSchema.methods.eat = function(){
+    console.log("I've eatten one "+this.name);
+}
+*/
+
+//设置索引, 1 表示正序, -1 表示逆序
 userInfoSchema.index({id: 1});
 
-
+//继承一个模板schema
 const UserInfo = mongoose.model('UserInfo', userInfoSchema);
+
+/*
+//生成一个实例instance
+let lucy = new UserInfo({
+    username:'lucy',
+    city:'shenzhen'
+});
+
+//存放数据
+lucy.save((err,data)=>{
+    if(err) return console.log(err);
+    lucy.eat();
+});
+
+//查找数据
+UserInfo.find({username:'lucy'},(err,data)=>{
+    console.log(data);
+})
+*/
 
 export default UserInfo

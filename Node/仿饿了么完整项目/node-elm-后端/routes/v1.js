@@ -11,7 +11,9 @@ import Captchas from '../controller/v1/captchas'
 import User from '../controller/v2/user'
 import Order from '../controller/v1/order'
 import Hongbao from '../controller/promotion/hongbao'
+
 const baseHandle = new BaseComponent();
+
 const router = express.Router();
 
 router.get('/cities', CityHandle.getCity);
