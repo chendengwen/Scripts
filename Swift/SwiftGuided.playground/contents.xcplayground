@@ -8,7 +8,9 @@
         <page name='Enumerations and Structures'/>
         <page name='Protocols and Extensions'/>
         <page name='Error Handling'/>
+        <page name='Error Handling 2'/>
         <page name='Generics'/>
         <page name='License'/>
+        <page name='练习'/>
     </pages>
 </playground>
