@@ -50,12 +50,5 @@ class Curry: NSObject {
         }
         
     }
-    
-    // curried
-    func addCur(a: Int, b: Int, c: Int) -> Int{
-        print("\(a) + \(b) + \(c)")
-        return a + b + c
-    }
-
 
 }

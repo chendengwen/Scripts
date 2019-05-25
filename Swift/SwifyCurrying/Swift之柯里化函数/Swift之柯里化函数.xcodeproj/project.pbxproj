@@ -7,13 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EC11BED61AF08DAD00843EEB /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC11BED51AF08DAD00843EEB /* UI.swift */; };
 		ECA462971AEFB442003CC654 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA462961AEFB442003CC654 /* AppDelegate.swift */; };
 		ECA462991AEFB442003CC654 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA462981AEFB442003CC654 /* ViewController.swift */; };
 		ECA4629C1AEFB442003CC654 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECA4629A1AEFB442003CC654 /* Main.storyboard */; };
 		ECA4629E1AEFB442003CC654 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECA4629D1AEFB442003CC654 /* Images.xcassets */; };
 		ECA462A11AEFB442003CC654 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECA4629F1AEFB442003CC654 /* LaunchScreen.xib */; };
-		ECA462AD1AEFB442003CC654 /* Swift______Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA462AC1AEFB442003CC654 /* Swift______Tests.swift */; };
 		ECA462B71AEFB45E003CC654 /* Curry.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA462B61AEFB45E003CC654 /* Curry.swift */; };
 		ECA462B91AEFF737003CC654 /* Currying.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA462B81AEFF737003CC654 /* Currying.swift */; };
 /* End PBXBuildFile section */
@@ -29,7 +27,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EC11BED51AF08DAD00843EEB /* UI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UI.swift; sourceTree = "<group>"; };
 		ECA462911AEFB442003CC654 /* Swift之柯里化函数.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift之柯里化函数.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECA462951AEFB442003CC654 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ECA462961AEFB442003CC654 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,8 +35,6 @@
 		ECA4629D1AEFB442003CC654 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		ECA462A01AEFB442003CC654 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		ECA462A61AEFB442003CC654 /* Swift之柯里化函数Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swift之柯里化函数Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		ECA462AB1AEFB442003CC654 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ECA462AC1AEFB442003CC654 /* Swift______Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Swift______Tests.swift"; sourceTree = "<group>"; };
 		ECA462B61AEFB45E003CC654 /* Curry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Curry.swift; sourceTree = "<group>"; };
 		ECA462B81AEFF737003CC654 /* Currying.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currying.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,7 +61,6 @@
 			isa = PBXGroup;
 			children = (
 				ECA462931AEFB442003CC654 /* Swift之柯里化函数 */,
-				ECA462A91AEFB442003CC654 /* Swift之柯里化函数Tests */,
 				ECA462921AEFB442003CC654 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -91,7 +85,6 @@
 				ECA462941AEFB442003CC654 /* Supporting Files */,
 				ECA462B61AEFB45E003CC654 /* Curry.swift */,
 				ECA462B81AEFF737003CC654 /* Currying.swift */,
-				EC11BED51AF08DAD00843EEB /* UI.swift */,
 			);
 			path = "Swift之柯里化函数";
 			sourceTree = "<group>";
@@ -100,23 +93,6 @@
 			isa = PBXGroup;
 			children = (
 				ECA462951AEFB442003CC654 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		ECA462A91AEFB442003CC654 /* Swift之柯里化函数Tests */ = {
-			isa = PBXGroup;
-			children = (
-				ECA462AC1AEFB442003CC654 /* Swift______Tests.swift */,
-				ECA462AA1AEFB442003CC654 /* Supporting Files */,
-			);
-			path = "Swift之柯里化函数Tests";
-			sourceTree = "<group>";
-		};
-		ECA462AA1AEFB442003CC654 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				ECA462AB1AEFB442003CC654 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -226,7 +202,6 @@
 				ECA462B91AEFF737003CC654 /* Currying.swift in Sources */,
 				ECA462991AEFB442003CC654 /* ViewController.swift in Sources */,
 				ECA462B71AEFB45E003CC654 /* Curry.swift in Sources */,
-				EC11BED61AF08DAD00843EEB /* UI.swift in Sources */,
 				ECA462971AEFB442003CC654 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -235,7 +210,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECA462AD1AEFB442003CC654 /* Swift______Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
