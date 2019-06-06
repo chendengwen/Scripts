@@ -20,6 +20,12 @@ PODS:
     - Reusable/View (= 4.0.5)
   - Reusable/Storyboard (4.0.5)
   - Reusable/View (4.0.5)
+  - RxCocoa (5.0.0):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.0.0):
+    - RxSwift (~> 5)
+  - RxSwift (5.0.0)
   - SnapKit (4.2.0)
   - SnapKitExtend (1.0.7):
     - SnapKit
@@ -37,6 +43,8 @@ DEPENDENCIES:
   - MJRefresh
   - Moya
   - Reusable
+  - RxCocoa (~> 5.0)
+  - RxSwift (~> 5.0)
   - SnapKitExtend
   - Then
   - UINavigation-SXFixSpace-Swift
@@ -55,6 +63,9 @@ SPEC REPOS:
     - Moya
     - Result
     - Reusable
+    - RxCocoa
+    - RxRelay
+    - RxSwift
     - SnapKit
     - SnapKitExtend
     - Then
@@ -73,11 +84,14 @@ SPEC CHECKSUMS:
   Moya: 161263550064ff8a4948e8ff63137fd72a876292
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   Reusable: 188be1a54ac0691bc66e5bb24ec6eb91971b315b
+  RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
+  RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
+  RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SnapKitExtend: 00ee4db6d1f80bee01a1e75745f2a6ae695ba662
   Then: 71866660c7af35a7343831f7668e7cd2b62ee0f2
   UINavigation-SXFixSpace-Swift: 6db89c7d9565060d84133b1fd4d02182f88a1d7c
 
-PODFILE CHECKSUM: 3e8f9ceb22548966de72c4c3bab3303da0e8e60d
+PODFILE CHECKSUM: 899463254e2be7c5fab1f7200030fbceaebc1731
 
-COCOAPODS: 1.5.2
+COCOAPODS: 1.7.0

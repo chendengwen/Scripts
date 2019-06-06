@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white
-        window?.rootViewController = UTabBarController()
+        window?.rootViewController = RxTestViewController()
         window?.makeKeyAndVisible()
         //MARK: 修正齐刘海
 //        UHairPowder.instance.spread()

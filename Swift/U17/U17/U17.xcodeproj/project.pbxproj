@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		22B002FBB03175E52ABC19F2 /* Pods_U17.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFAC76C53431EC466C69E89C /* Pods_U17.framework */; };
+		3DD9DF2622A941D500BE06CF /* RxTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD9DF2422A941D500BE06CF /* RxTestViewController.swift */; };
+		3DD9DF2722A941D500BE06CF /* RxTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DD9DF2522A941D500BE06CF /* RxTestViewController.xib */; };
 		56286F5B1F9F20A40055DD81 /* UModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56286F5A1F9F20A40055DD81 /* UModel.swift */; };
 		5668D36C1F7E146B00D24C39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5668D36B1F7E146B00D24C39 /* Assets.xcassets */; };
 		5668D36F1F7E146B00D24C39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5668D36D1F7E146B00D24C39 /* LaunchScreen.storyboard */; };
@@ -92,6 +94,8 @@
 
 /* Begin PBXFileReference section */
 		1B31C0FDA7877523F6713C43 /* Pods-U17.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-U17.debug.xcconfig"; path = "Pods/Target Support Files/Pods-U17/Pods-U17.debug.xcconfig"; sourceTree = "<group>"; };
+		3DD9DF2422A941D500BE06CF /* RxTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxTestViewController.swift; sourceTree = "<group>"; };
+		3DD9DF2522A941D500BE06CF /* RxTestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RxTestViewController.xib; sourceTree = "<group>"; };
 		56286F5A1F9F20A40055DD81 /* UModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UModel.swift; sourceTree = "<group>"; };
 		5668D3611F7E146B00D24C39 /* U17.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = U17.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5668D36B1F7E146B00D24C39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -235,6 +239,8 @@
 				5668D36D1F7E146B00D24C39 /* LaunchScreen.storyboard */,
 				56286F591F9F1EDA0055DD81 /* Model */,
 				566B6A831FCFA878003E0CA7 /* Procedure */,
+				3DD9DF2422A941D500BE06CF /* RxTestViewController.swift */,
+				3DD9DF2522A941D500BE06CF /* RxTestViewController.xib */,
 			);
 			path = U17;
 			sourceTree = "<group>";
@@ -625,6 +631,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5668D36F1F7E146B00D24C39 /* LaunchScreen.storyboard in Resources */,
+				3DD9DF2722A941D500BE06CF /* RxTestViewController.xib in Resources */,
 				5668D36C1F7E146B00D24C39 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -656,7 +663,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-U17/Pods-U17-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-U17/Pods-U17-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/EmptyDataSet-Swift/EmptyDataSet_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/HMSegmentedControl/HMSegmentedControl.framework",
@@ -669,6 +676,9 @@
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/Reusable/Reusable.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKitExtend/SnapKitExtend.framework",
 				"${BUILT_PRODUCTS_DIR}/Then/Then.framework",
@@ -688,6 +698,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reusable.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKitExtend.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Then.framework",
@@ -695,7 +708,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-U17/Pods-U17-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-U17/Pods-U17-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -765,6 +778,7 @@
 				566B6AF51FCFA878003E0CA7 /* UComicListViewController.swift in Sources */,
 				566B6B1D1FCFA899003E0CA7 /* UIImageExtensions.swift in Sources */,
 				566B6AF41FCFA878003E0CA7 /* UChapterViewController.swift in Sources */,
+				3DD9DF2622A941D500BE06CF /* RxTestViewController.swift in Sources */,
 				566B6B041FCFA878003E0CA7 /* UBaseCollectionViewCell.swift in Sources */,
 				566B6AD61FCFA878003E0CA7 /* UUpdateTCell.swift in Sources */,
 				566B6ADE1FCFA878003E0CA7 /* UBoutiqueListViewController.swift in Sources */,
@@ -921,7 +935,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XYBK7B7U6R;
 				INFOPLIST_FILE = U17/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.charles.U17;
@@ -944,7 +958,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XYBK7B7U6R;
 				INFOPLIST_FILE = U17/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.charles.U17;

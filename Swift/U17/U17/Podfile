@@ -19,4 +19,7 @@ pod 'IQKeyboardManagerSwift'
 pod 'EmptyDataSet-Swift'
 pod 'UINavigation-SXFixSpace-Swift'
 
+pod 'RxSwift', '~> 5.0'
+pod 'RxCocoa', '~> 5.0'
+
 end
