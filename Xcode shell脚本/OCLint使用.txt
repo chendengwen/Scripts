@@ -1,0 +1,48 @@
+leanup before building
+rm -f compile_commands.json
+xctool -project SuperLoggerDemo.xcodeproj -scheme SuperLoggerDemo clean
+
+# cleanBuild Project
+xctool build \
+	-project SuperLoggerDemo.xcodeproj -scheme SuperLoggerDemo \
+	-reporter json-compilation-database:compile_commands.json
+
+# Analyze Project
+oclint-json-compilation-database -e Pods -- \
+	-max-priority-1=100000 \
+	-max-priority-2=100000 -max-priority-3=100000 \
+   	-disable-rule=InvertedLogic \
+   	-disable-rule=CollapsibleIfStatements \
+ 	-disable-rule=UnusedMethodParameter \
+	-disable-rule=LongLine \
+	-disable-rule=LongVariableName \
+	-disable-rule=ShortVariableName \
+	-disable-rule=UselessParentheses \
+	-disable-rule=IvarAssignmentOutsideAccessorsOrInit | sed 's/\(.*\.\m\{1,2\}:[0-9]*:[0-9]*:\)/\1 warning:/'
+
+# Final cleanup
+rm -f compile_commands.json
+
+
+输出
+OCLint Report
+
+Summary: TotalFiles=14 FilesWithViolations=4 P1=0 P2=2 P3=6
+
+SuperLoggerPreviewView.m:77:37: warning: replace with container literal [migration|P3]
+SuperLogerListView.m:206:37: warning: empty catch statement [empty|P2]
+SuperLogerListView.m:25:15: warning: empty if statement [empty|P2]
+SuperLogerListView.m:119:1: warning: long method [size|P3] Method with 92 lines exceeds limit of 50
+SuperLogerListView.m:171:41: warning: replace with container literal [migration|P3]
+SuperLogerListView.m:110:21: warning: replace with object subscripting [migration|P3]
+SuperLogger.m:60:30: warning: replace with object subscripting [migration|P3]
+SuperLogger.m:108:31: warning: replace with object subscripting [migration|P3]
+
+[OCLint (http://oclint.org) v0.10.2]
+
+具体问题可以参考：http://docs.oclint.org/en/stable/rules/index.html
+
+修复后
+OCLint Report
+
+Summary: TotalFiles=14 FilesWithViolations=0 P1=0 P2=0 P3=0
