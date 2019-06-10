@@ -1,0 +1,41 @@
+[
+    {
+        "name": "demo",
+        "productName": "项目名称",
+        "author": "作者",
+        "version": "1.0.0",
+        "main": "main.js",
+        "description": "项目描述",
+        "scripts": {
+          "pack": "electron-builder --dir",
+          "dist": "electron-builder",
+          "postinstall": "electron-builder install-app-deps"
+        }
+    },
+    {
+        "name": "php项目",
+        "productName": "都江堰项目",
+        "author": "Gary",
+        "version": "1.0.0",
+        "main": "main.js",
+        "description": "难度很大",
+        "scripts": {
+          "pack": "electron-builder --dir",
+          "dist": "electron-builder",
+          "postinstall": "electron-builder install-app-deps"
+        }
+    },
+    {
+        "name": "demo2",
+        "productName": "kepp quite",
+        "author": "作者",
+        "version": "1.0.0",
+        "main": "main.js",
+        "description": "项目描述",
+        "scripts": {
+          "pack": "electron-builder --dir",
+          "dist": "electron-builder",
+          "postinstall": "electron-builder install-app-deps"
+        }
+    }
+]
