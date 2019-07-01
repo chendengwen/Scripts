@@ -1,16 +1,21 @@
 <template>
     <div>
+		<!-- 1.导航栏 -->
     	<head-top signin-up='msite'>
+			<!-- 搜索按钮 -->
     		<router-link :to="'/search/geohash'" class="link_search" slot="search">
 	    		<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" version="1.1">
 	    			<circle cx="8" cy="8" r="7" stroke="rgb(255,255,255)" stroke-width="1" fill="none"/>
 	    			<line x1="14" y1="14" x2="20" y2="20" style="stroke:rgb(255,255,255);stroke-width:2"/>
 	    		</svg>
     		</router-link>
-			<router-link to="/home" slot="msite-title" class="msite_title">
+			<!-- 导航栏标题 -->
+			<router-link to="/home" class="msite_title" slot="msite-title">
 				<span class="title_text ellipsis">{{msiteTitle}}</span>
 			</router-link>
     	</head-top>
+
+		<!-- 2.上半部分的服务分类 -->
     	<nav class="msite_nav">
     		<div class="swiper-container" v-if="foodTypes.length">
 		        <div class="swiper-wrapper">
@@ -23,10 +28,13 @@
 	            		</router-link>
 		            </div>
 		        </div>
+				<!-- 循环滚动索引标点 -->
 		        <div class="swiper-pagination"></div>
 		    </div>
 		    <img src="../../images/fl.svg" class="fl_back animation_opactiy" v-else>
     	</nav>
+
+		<!-- 3.附近商家 -->
     	<div class="shop_list_container">
 	    	<header class="shop_header">
 	    		<svg class="shop_icon">
@@ -36,8 +44,10 @@
 	    	</header>
 	    	<shop-list v-if="hasGetData" :geohash="geohash"></shop-list>
     	</div>
+
+		<!-- 4.底部工具栏 -->
     	<foot-guide></foot-guide>
-    </div>    
+    </div>
 </template>
 
 <script>

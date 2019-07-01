@@ -8,6 +8,8 @@
     	<transition name="router-fade" mode="out-in">
 			<router-view v-if="!$route.meta.keepAlive"></router-view>
 		</transition>
+		
+		<!-- 评分 -->
 		<svg-icon></svg-icon>	
     </div>
 </template>
@@ -19,7 +21,7 @@
             svgIcon
         },
   	}
-
+ 
 </script>
 
 <style lang="scss">
