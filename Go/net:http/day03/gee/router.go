@@ -61,7 +61,7 @@ func (r *router) getRoute(method string, path string) (*node, map[string]string)
 		parts := parsePattern(n.pattern)
 		for index, part := range parts {
 			if part[0] == ':' {
-				params[part[1:]] = searchParts[index]
+				[part[1:]] = searchParts[index]
 			}
 			if part[0] == '*' && len(part) > 1 {
 				params[part[1:]] = strings.Join(searchParts[index:], "/")
@@ -87,7 +87,7 @@ func (r *router) getRoutes(method string) []*node {
 func (r *router) handle(c *Context) {
 	n, params := r.getRoute(c.Method, c.Path)
 	if n != nil {
-		c.Params = params
+		c. = params
 		key := c.Method + "-" + n.pattern
 		r.handlers[key](c)
 	} else {
