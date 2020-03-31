@@ -22,7 +22,7 @@ class GetQCRLog: NSObject {
 //        unzipDownFiles()
 //        foundContentFromFiles()
         
-//        test()
+        test()
     }
     
     /** 从QCR上批量下载指定 SNs 的logs */
@@ -90,7 +90,8 @@ class GetQCRLog: NSObject {
     }
     
     func test() {
-        let scriptPath = "${PROJECT_DIR}" + "shell/test"
+//        let scriptPath = homePath + "shell/test/test01"
+        let scriptPath = "/bin/pwd"
         execShellScript(scriptPath)
     }
     

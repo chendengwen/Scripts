@@ -23,11 +23,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3D27B81F2431BC9300618382 /* test01.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = test01.sh; sourceTree = "<group>"; };
 		3D7000FF21CF532B003F9A24 /* SwiftScript */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftScript; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D70011A21CF736F003F9A24 /* unzipFiles.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = unzipFiles.sh; sourceTree = "<group>"; };
 		3D70011B21CF736F003F9A24 /* foundContentFromFiles.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = foundContentFromFiles.sh; sourceTree = "<group>"; };
 		3D70011C21CF736F003F9A24 /* getQCRLog.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = getQCRLog.sh; sourceTree = "<group>"; };
-		3D70011D21CF736F003F9A24 /* test.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = test.sh; sourceTree = "<group>"; };
 		3D70011E21CF736F003F9A24 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -42,6 +42,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D27B81E2431BC5A00618382 /* test */ = {
+			isa = PBXGroup;
+			children = (
+				3D27B81F2431BC9300618382 /* test01.sh */,
+			);
+			path = test;
+			sourceTree = "<group>";
+		};
 		3D7000F621CF532B003F9A24 = {
 			isa = PBXGroup;
 			children = (
@@ -61,6 +69,7 @@
 		3D70011821CF736F003F9A24 /* SwiftShell */ = {
 			isa = PBXGroup;
 			children = (
+				3D27B81E2431BC5A00618382 /* test */,
 				3D70011921CF736F003F9A24 /* shell */,
 				3D70011E21CF736F003F9A24 /* main.swift */,
 			);
@@ -73,7 +82,6 @@
 				3D70011A21CF736F003F9A24 /* unzipFiles.sh */,
 				3D70011B21CF736F003F9A24 /* foundContentFromFiles.sh */,
 				3D70011C21CF736F003F9A24 /* getQCRLog.sh */,
-				3D70011D21CF736F003F9A24 /* test.sh */,
 			);
 			path = shell;
 			sourceTree = "<group>";
@@ -282,7 +290,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XYBK7B7U6R;
+				DEVELOPMENT_TEAM = B4275W9YM6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 			};
@@ -292,7 +300,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XYBK7B7U6R;
+				DEVELOPMENT_TEAM = B4275W9YM6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 			};
