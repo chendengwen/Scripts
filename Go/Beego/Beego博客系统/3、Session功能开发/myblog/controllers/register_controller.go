@@ -1,12 +1,14 @@
 package controllers
 
 import (
-	"github.com/astaxie/beego"
-	"myblogweb/utils"
 	"fmt"
-	"github.com/matrix/go-matrix/log"
-	"time"
+	"myblog/utils"
+
+	"github.com/astaxie/beego"
+
+	// "github.com/matrix/go-matrix/log"
 	"myblog/models"
+	"time"
 )
 
 type RegisterController struct {
@@ -25,7 +27,7 @@ func (this *RegisterController) Post() {
 	password := this.GetString("password")
 	repassword := this.GetString("repassword")
 	fmt.Println(username, password, repassword)
-	log.INFO(username, password, repassword)
+	// log.INFO(username, password, repassword)
 
 	//注册之前先判断该用户名是否已经被注册，如果已经注册，返回错误
 	id := models.QueryUserWithUsername(username)
@@ -51,4 +53,3 @@ func (this *RegisterController) Post() {
 	this.ServeJSON()
 
 }
-

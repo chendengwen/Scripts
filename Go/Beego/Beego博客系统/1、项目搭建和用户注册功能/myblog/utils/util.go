@@ -1,12 +1,16 @@
 package utils
 
 import (
+	"crypto/md5"
 	"fmt"
+
 	"github.com/astaxie/beego"
+
 	//切记：导入驱动包
-	_ "github.com/go-sql-driver/mysql"
-	"log"
 	"database/sql"
+	"log"
+
+	_ "github.com/go-sql-driver/mysql"
 )
 
 var db *sql.DB
@@ -68,4 +72,10 @@ func CreateTableWithUser() {
 //查询
 func QueryRowDB(sql string) *sql.Row {
 	return db.QueryRow(sql)
+}
+
+//传入的数据不一样，那么MD5后的32位长度的数据肯定会不一样
+func MD5(str string) string {
+	md5str := fmt.Sprintf("%x", md5.Sum([]byte(str)))
+	return md5str
 }
