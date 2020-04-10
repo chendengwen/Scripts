@@ -244,27 +244,26 @@ SQL是结构化查询语言(Structured Query Language)
 
 1. DDL数据定义语言(data definition language)
 
-   ​	create table,alter table，drop table，truncate table 。。
+​	create table, alter table, drop table, truncate table 
 
 2. DML数据操作语言(Data Manipulation Language)
 
-   ​	insert,update,delete 
+   ​	insert, update, delete 
 
 3. DQL数据查询语言(data query language)
 
-   select
+        select
 
    其实DQL也从DML中分离出来的。
 
 4. DCL数据控制语言(Data Control Language)
 
-   ​	grant 权限 to scott，revoke 权限 from scott 。。。 
+   ​    grant 权限 to scott，revoke 权限 from scott 。。。 
 
-5. DCL(事务控制语言)：commit，rollback，rollback to savepoint 。。。
+5. DCL(事务控制语言)
+        commit，rollback，rollback to savepoint 。。。
 
    
-
-
 
 ## 二、 数据库的基本操作
 
